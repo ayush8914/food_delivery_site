@@ -4,7 +4,6 @@
   "description": "food delivery site",
   "main": "index.js",
   "scripts": {
-    "run": "nodemon index.js",
     "start": "node index.js"
   },
   "author": "ayush gevariya",
