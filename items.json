@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Spaghetti Carbonara",
+    "price": 12.99,
+    "image": "spaghetti_carbonara.jpg",
+    "description": "Classic Italian pasta dish with creamy egg and bacon sauce.",
+    "category": "Pasta",
+    "featured": true,
+    "rating": 4.7,
+    "createdAt": "2023-08-05T12:34:56.789Z"
+  },
+  {
+    "name": "Chicken Tikka Masala",
+    "price": 15.5,
+    "image": "chicken_tikka_masala.jpg",
+    "description": "Indian spiced chicken cooked in a rich tomato and cream sauce.",
+    "category": "Indian",
+    "featured": false,
+    "rating": 4.2,
+    "createdAt": "2023-08-04T10:20:30.456Z"
+  },
+  {
+    "name": "Caesar Salad",
+    "price": 8.99,
+    "image": "caesar_salad.jpg",
+    "description": "Fresh romaine lettuce with Caesar dressing, croutons, and Parmesan cheese.",
+    "category": "Salad",
+    "featured": true,
+    "rating": 4.5,
+    "createdAt": "2023-08-03T08:15:30.123Z"
+  },
+  {
+    "name": "Miso Soup",
+    "price": 4.5,
+    "image": "miso_soup.jpg",
+    "description": "Traditional Japanese soybean paste soup with tofu and seaweed.",
+    "category": "Soup",
+    "featured": false,
+    "rating": 4.0,
+    "createdAt": "2023-08-02T15:45:30.987Z"
+  }
+]
