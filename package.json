@@ -4,8 +4,8 @@
   "description": "food delivery site",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "run": "node index.js"
+    "run": "nodemon index.js",
+    "start": "node index.js"
   },
   "author": "ayush gevariya",
   "license": "ISC",
