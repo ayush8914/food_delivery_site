@@ -3,7 +3,7 @@ const connectDB = require('./db/connect');
 const Item = require('./models/item');
 
 
-const Itemsjson = require('./items.json');
+const Itemsjson = require('./items2.json');
 const start = async () => { 
     try {
         await connectDB(process.env.MONGODB_URI);

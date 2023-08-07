@@ -1,0 +1,84 @@
+[
+    {
+      "name": "Cheeseburger",
+      "price": 9.99,
+      "image": "cheeseburger.jpg",
+      "description": "Delicious cheeseburger with all the fixings.",
+      "category": "Burgers",
+      "featured": true,
+      "rating": 4.5
+    },
+    {
+      "name": "Margherita Pizza",
+      "price": 12.49,
+      "image": "margherita_pizza.jpg",
+      "description": "Classic Margherita pizza with fresh tomatoes and basil.",
+      "category": "Pizza",
+      "rating": 4.2
+    },
+    {
+      "name": "Chicken Tacos",
+      "price": 8.99,
+      "image": "chicken_tacos.jpg",
+      "description": "Tasty chicken tacos with salsa and guacamole.",
+      "category": "Tacos",
+      "rating": 4.7
+    },
+    {
+      "name": "Spaghetti Bolognese",
+      "price": 11.99,
+      "image": "spaghetti_bolognese.jpg",
+      "description": "Homemade spaghetti with rich Bolognese sauce.",
+      "category": "Pasta",
+      "rating": 4.0
+    },
+    {
+      "name": "Caesar Salad",
+      "price": 7.49,
+      "image": "caesar_salad.jpg",
+      "description": "Fresh Caesar salad with crisp romaine lettuce and dressing.",
+      "category": "Salads",
+      "rating": 4.8
+    },
+    {
+      "name": "Sushi Roll Combo",
+      "price": 16.99,
+      "image": "sushi_combo.jpg",
+      "description": "Assorted sushi rolls with soy sauce and wasabi.",
+      "category": "Sushi",
+      "rating": 4.6
+    },
+    {
+      "name": "Chocolate Cake",
+      "price": 6.99,
+      "image": "chocolate_cake.jpg",
+      "description": "Decadent chocolate cake with a rich ganache.",
+      "category": "Desserts",
+      "rating": 4.3
+    },
+    {
+      "name": "Fried Chicken",
+      "price": 10.99,
+      "image": "fried_chicken.jpg",
+      "description": "Crispy fried chicken served with a side of coleslaw.",
+      "category": "Chicken",
+      "rating": 4.9
+    },
+    {
+      "name": "Vegetable Stir-Fry",
+      "price": 9.49,
+      "image": "vegetable_stirfry.jpg",
+      "description": "Colorful vegetable stir-fry with a savory sauce.",
+      "category": "Vegetarian",
+      "rating": 4.1
+    },
+    {
+      "name": "Berry Smoothie",
+      "price": 5.99,
+      "image": "berry_smoothie.jpg",
+      "description": "Refreshing berry smoothie made with fresh fruits.",
+      "category": "Beverages",
+      "rating": 4.4
+    }
+  ]
+  
