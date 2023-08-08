@@ -1,6 +1,6 @@
-const moongose = require('mongoose');
+const mongoose = require('mongoose');
 
-const ItemSchema = new moongose.Schema({
+const ItemSchema = new mongoose.Schema({
     name: { type: String, required: true },
     price: { type: Number, required:[ true, "price is required"]},
     image: {type: String, required: true},
@@ -12,8 +12,7 @@ const ItemSchema = new moongose.Schema({
 
 });
 
-
-module.exports = moongose.model('Item', ItemSchema);
+module.exports = mongoose.model('Item', ItemSchema);
 
 
 

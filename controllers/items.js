@@ -43,6 +43,12 @@ const deleteItem = async (req, res) => {
         res.status(200).json({itemDeleted});
 }
 
+//delete all
+const deleteAllItems = async (req, res) => {
+        const itemsDeleted = await item.deleteMany();
+        res.status(200).json({itemsDeleted});
+
+}
 const addItem = async (req, res) => {
         const newItem = await item.create(req.body);
         res.status(201).json({newItem});
@@ -65,6 +71,6 @@ const getAllItemsTesting = async (req, res) => {
         res.status(200).json({items});   
 };
  
-module.exports = { getAllItems, getAllItemsTesting,addItem, addAllItems, updateItem,deleteItem}; 
+module.exports = { getAllItems, getAllItemsTesting,addItem, addAllItems, updateItem,deleteItem , deleteAllItems}; 
 
         

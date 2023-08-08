@@ -1,0 +1,63 @@
+[
+    {
+      "name": "Delicious Bites",
+      "cuisine": "Italian",
+      "address": {
+        "street": "123 Main Street",
+        "city": "Cityville",
+        "state": "Stateland",
+        "zipCode": "12345"
+      },
+      "imageUrl": "https://example.com/restaurant1.jpg",
+      "menu": []
+    },
+    {
+      "name": "Spice Junction",
+      "cuisine": "Indian",
+      "address": {
+        "street": "456 Curry Lane",
+        "city": "Spicetown",
+        "state": "Flavorstate",
+        "zipCode": "67890"
+      },
+      "imageUrl": "https://example.com/restaurant2.jpg",
+      "menu": []
+    },
+    {
+      "name": "Sushi Express",
+      "cuisine": "Japanese",
+      "address": {
+        "street": "789 Sushi Road",
+        "city": "Rolltown",
+        "state": "Noriworld",
+        "zipCode": "54321"
+      },
+      "imageUrl": "https://example.com/restaurant3.jpg",
+      "menu": []
+    },
+    {
+      "name": "Taco Haven",
+      "cuisine": "Mexican",
+      "address": {
+        "street": "234 Taco Street",
+        "city": "Salsaville",
+        "state": "Guacamolestate",
+        "zipCode": "13579"
+      },
+      "imageUrl": "https://example.com/restaurant4.jpg",
+      "menu": []
+    },
+    {
+      "name": "Mama's Kitchen",
+      "cuisine": "Home-style",
+      "address": {
+        "street": "567 Comfort Lane",
+        "city": "Homestead",
+        "state": "Cozystate",
+        "zipCode": "86420"
+      },
+      "imageUrl": "https://example.com/restaurant5.jpg",
+      "menu": []
+    }
+  ]
+  
