@@ -1,7 +1,18 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAllRestaurants, getRestaurantById, addRestaurant , updateRestaurant, deleteRestaurant, addItemToRestaurant, getAllItemsFromRestaurant} = require('../controllers/restaurant');
+const { getAllRestaurants,
+     getRestaurantById, 
+     addRestaurant , 
+     updateRestaurant, 
+     deleteRestaurant, 
+     addItemToRestaurant, 
+     getAllItemsFromRestaurant,
+     deleteAllRestaurants,
+     removeItemFromRestaurant,
+     updateItemFromRestaurant,
+     deleteAllItemsFromRestaurant
+    } = require('../controllers/restaurant');
 
 //get all restaurants
 router.route('/').get( getAllRestaurants);
@@ -18,11 +29,21 @@ router.route('/:id').patch( updateRestaurant );
 //delete restaurant
 router.route('/:id').delete( deleteRestaurant );
 
+//delete all restaurants
+router.route('/').delete( deleteAllRestaurants );
+
 //add item to restaurant
 router.route('/:id/items').post( addItemToRestaurant );
+
+//remove item from restaurant
+router.route('/:id/items/:itemid').delete( removeItemFromRestaurant );
+
+//update item from restaurant
+router.route('/:id/items/:itemid').patch( updateItemFromRestaurant );
 
 //get all items from restaurant
 router.route('/:id/items').get( getAllItemsFromRestaurant );
 
-
+//delete all items from restaurant
+router.route('/:id/items').delete( deleteAllItemsFromRestaurant );
 module.exports = router;    

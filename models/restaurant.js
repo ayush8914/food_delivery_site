@@ -10,7 +10,7 @@ const restaurantSchema = new mongoose.Schema({
       zipCode: { type: String, required: true },
     },
     imageUrl: { type: String },
-    menu: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Item' }],
+    // menu: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Item' }],
     // reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Review' }],
 
   });

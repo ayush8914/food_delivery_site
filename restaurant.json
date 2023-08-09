@@ -8,8 +8,7 @@
         "state": "Stateland",
         "zipCode": "12345"
       },
-      "imageUrl": "https://example.com/restaurant1.jpg",
-      "menu": []
+      "imageUrl": "https://example.com/restaurant1.jpg"
     },
     {
       "name": "Spice Junction",
@@ -20,8 +19,7 @@
         "state": "Flavorstate",
         "zipCode": "67890"
       },
-      "imageUrl": "https://example.com/restaurant2.jpg",
-      "menu": []
+      "imageUrl": "https://example.com/restaurant2.jpg"
     },
     {
       "name": "Sushi Express",
@@ -32,8 +30,7 @@
         "state": "Noriworld",
         "zipCode": "54321"
       },
-      "imageUrl": "https://example.com/restaurant3.jpg",
-      "menu": []
+      "imageUrl": "https://example.com/restaurant3.jpg"
     },
     {
       "name": "Taco Haven",
@@ -44,8 +41,7 @@
         "state": "Guacamolestate",
         "zipCode": "13579"
       },
-      "imageUrl": "https://example.com/restaurant4.jpg",
-      "menu": []
+      "imageUrl": "https://example.com/restaurant4.jpg"
     },
     {
       "name": "Mama's Kitchen",
@@ -56,8 +52,7 @@
         "state": "Cozystate",
         "zipCode": "86420"
       },
-      "imageUrl": "https://example.com/restaurant5.jpg",
-      "menu": []
+      "imageUrl": "https://example.com/restaurant5.jpg"
     }
   ]
   

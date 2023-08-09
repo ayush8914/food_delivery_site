@@ -2,8 +2,10 @@ const item = require('../models/item');
 
 
 const getAllItems = async (req, res) => {
-        const { category,name,sort,select } = req.query;
+        
+        const { category,name,sort,select, restaurantid} = req.query;
         const queryObject ={};
+        queryObject.restaurantid = restaurantid;
         if(category){
              queryObject.category = category;
         }
@@ -11,7 +13,7 @@ const getAllItems = async (req, res) => {
                 queryObject.name = { $regex: name, $options: 'i'};
                 //case insensitive and partial match
         }
-
+        
         let apiData = item.find(queryObject);
         if(sort){
              let sortFIx = sort.replace(","," ");
@@ -23,7 +25,7 @@ const getAllItems = async (req, res) => {
                 apiData = apiData.select(selectFix);
         }
          
-        //pagination
+        // pagination
         let page = parseInt(req.query.page) || 1;
         let limit = parseInt(req.query.limit) || 3;
         let startIndex = (page - 1) * limit;
@@ -31,11 +33,12 @@ const getAllItems = async (req, res) => {
         
         const items =await apiData;
         res.status(200).json({items, nbHits: items.length });
+
 };
 
 
 const deleteItem = async (req, res) => {
-        const { id: itemID } = req.params;
+        const { itemid: itemID } = req.params;
         const itemDeleted = await item.findByIdAndDelete(itemID);
         if(!itemDeleted){
                 return res.status(404).json({msg: `No item with id ${itemID}`});
@@ -45,10 +48,13 @@ const deleteItem = async (req, res) => {
 
 //delete all
 const deleteAllItems = async (req, res) => {
-        const itemsDeleted = await item.deleteMany();
+        const queryObject ={};
+        queryObject.restaurantid = req.query.restaurantid;
+        const itemsDeleted = await item.deleteMany(queryObject);
         res.status(200).json({itemsDeleted});
 
 }
+
 const addItem = async (req, res) => {
         const newItem = await item.create(req.body);
         res.status(201).json({newItem});
@@ -61,7 +67,7 @@ const addAllItems = async (req, res) => {
 
 //update item
 const updateItem = async (req, res) => {
-        const { id: itemID } = req.params;
+        const { itemid: itemID } = req.params;
         const items = await item.updateOne({_id: itemID}, req.body);
         res.status(200).json({items});
 }
