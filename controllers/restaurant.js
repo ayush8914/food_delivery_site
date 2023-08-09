@@ -97,7 +97,7 @@ const updateItemFromRestaurant = async (req, res) => {
 const getAllItemsFromRestaurant = async (req, res) => {
         const { id: restaurantID } = req.params;
         const restaurant = await restuarant.findById(restaurantID).populate('menu');
-        
+
         if(!restaurant){
                 return res.status(404).json({msg: `No restaurant with id ${restaurantID}`});
         }
