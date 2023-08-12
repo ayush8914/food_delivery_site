@@ -11,7 +11,7 @@ const connectDB = require('./db/connect');
 const app = experss();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors());
 app.use(BodyParser.json());
 app.use('/api/items', items_routes  );
 app.use('/api/users', user_routes);
