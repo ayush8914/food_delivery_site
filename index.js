@@ -12,7 +12,7 @@ const app = experss();
 const PORT = process.env.PORT || 5000;
 
 const corsOptions ={
-    origin:'*', 
+    origin:'localhost:3000', 
     credentials:true,            
     optionSuccessStatus:200
 }
