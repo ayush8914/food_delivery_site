@@ -1,7 +1,7 @@
 require('dotenv').config();
 const experss = require('express');
 const BodyParser = require('body-parser');
-const cors = require('cors');
+// const cors = require('cors');
 const items_routes = require('./routes/items'); 
 const restaurants_routes = require('./routes/restaurant');
 const user_routes = require('./routes/userRoutes');
@@ -11,7 +11,8 @@ const connectDB = require('./db/connect');
 const app = experss();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+// Middlewares
+// app.use(cors());
 app.use(BodyParser.json());
 app.use('/api/items', items_routes  );
 app.use('/api/users', user_routes);
