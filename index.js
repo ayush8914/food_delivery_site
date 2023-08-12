@@ -1,6 +1,7 @@
 require('dotenv').config();
 const experss = require('express');
 const BodyParser = require('body-parser');
+const cors = require('cors');
 const items_routes = require('./routes/items'); 
 const restaurants_routes = require('./routes/restaurant');
 const user_routes = require('./routes/userRoutes');
@@ -10,6 +11,12 @@ const connectDB = require('./db/connect');
 const app = experss();
 const PORT = process.env.PORT || 5000;
 
+const corsOptions ={
+    origin:'*', 
+    credentials:true,            
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 
 app.use(BodyParser.json());
 app.use('/api/items', items_routes  );
