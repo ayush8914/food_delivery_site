@@ -28,11 +28,7 @@ const start = async () => {
         } catch (error) {
             console.log(error);
         }
-    
 };
 
 
-function stop() {
-    server.close();
-}
 start();
