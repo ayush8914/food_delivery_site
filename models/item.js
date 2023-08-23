@@ -10,7 +10,7 @@ const ItemSchema = new mongoose.Schema({
     featured: { type: Boolean, default: false },
     rating : { type: Number, required: false ,default: 0},
     createdAt:{ type: Date, default: Date.now}
-
+    
 });
 
 module.exports = mongoose.model('Item', ItemSchema);

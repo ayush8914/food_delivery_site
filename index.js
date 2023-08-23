@@ -6,17 +6,24 @@ const items_routes = require('./routes/items');
 const restaurants_routes = require('./routes/restaurant');
 const user_routes = require('./routes/userRoutes');
 const connectDB = require('./db/connect');
+const {protect} = require('./middleware/authmiddleware');
+// const jwt = require('jsonwebtoken');
+// const asyncHandler = require('express-async-handler');
+// const User = require('./models/user');
 
 
 const app = experss();
 const PORT = process.env.PORT || 5000;
 
+
+
 // Middlewares
 app.use(cors());
 app.use(BodyParser.json());
-app.use('/api/items', items_routes  );
-app.use('/api/users', user_routes);
-app.use('/api/restaurants', restaurants_routes);
+
+app.use('/api/items',items_routes);
+app.use('/api/users',user_routes);
+app.use('/api/restaurants',restaurants_routes);
 
 app.get('/', (req, res) => { res.send('Hello World') ; res.end();});
 

@@ -7,6 +7,12 @@ const getAllRestaurants = async (req, res) =>{
         const restaurants = await restuarant.find({});
         res.status(200).json({restaurants, nbHits: restaurants.length});
 }
+//get all restuarants by owner id
+const getAllRestaurantsByOwner = async (req, res) =>{
+        // const { id: ownerID } = req.params;
+        const restaurants = await restuarant.find({ownerId: req.params.id});
+        res.status(200).json({restaurants, nbHits: restaurants.length});
+}
 
 //get restuarant by id
 const getRestaurantById = async (req, res) =>{
@@ -118,5 +124,6 @@ module.exports = { getAllRestaurants,
         deleteAllRestaurants,
         removeItemFromRestaurant,
         updateItemFromRestaurant,
-        deleteAllItemsFromRestaurant
+        deleteAllItemsFromRestaurant,
+        getAllRestaurantsByOwner
 };

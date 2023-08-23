@@ -8,7 +8,7 @@ const User = require('../models/user');
 //@access   Public
 
 const registerUser = async (req, res) => {
-    const { name, email, password } = req.body;
+    const { name, email, password, role } = req.body;
     // console.log(req.body);
     if(!name || !email || !password){
         res.status(400);
@@ -31,6 +31,7 @@ const registerUser = async (req, res) => {
         name,
         email,
         password: hashedPassword,
+        role,
         // token: generateToken(user._id),
     });
 
@@ -65,7 +66,7 @@ const loginUser =asyncHandler( async(req, res) => {
             email: user.email,
             role: user.role,
             token: generateToken(user._id),
-        }) 
+        })  
     }else{
         res.status(400);
         throw new Error('Invalid email or password');
@@ -78,13 +79,46 @@ const loginUser =asyncHandler( async(req, res) => {
 //@access   private
 
 const getUserProfile = asyncHandler(async (req, res) => {
-    const {_id,name,email} = await User.findById(req.user._id);
+    const {_id,name,email,role} = await User.findById(req.user._id);
     res.status(200).json({
         id: _id,
         name,
         email,
+        role,
     });
+    
+});
 
+
+//user update
+const updateUser = asyncHandler(async (req, res) => {
+    const user = await User.findById(req.user._id);
+    // console.log(user);
+    if(user){
+        user.name = req.body.name || user.name;
+        user.email = req.body.email || user.email;
+        if(req.body.password){
+            const salt = await bcrypt.genSalt(10);
+            user.password = await bcrypt.hash(req.body.password, salt);
+        }
+        const updatedUser = await user.save();
+        res.status(200).json({
+            id: updatedUser._id,
+            name: updatedUser.name,
+            email: updatedUser.email,
+            role: updatedUser.role,
+            token: generateToken(updatedUser._id),
+        });
+    }else{
+        res.status(404);
+        throw new Error('User not found');
+    }
+});
+
+//all users
+const getAllUsers = asyncHandler(async (req, res) => {
+    const users = await User.find({});
+    res.status(200).json({users});
 });
 
 //generate JWT
@@ -94,5 +128,5 @@ const generateToken = (id) => {
     }
     );}
 
-module.exports = { registerUser, loginUser, getUserProfile };
+module.exports = { registerUser, loginUser, getUserProfile,getAllUsers,updateUser };
 

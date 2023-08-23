@@ -4,17 +4,20 @@ const User = require('../models/user');
 
 const protect = asyncHandler(async (req, res, next) => {
   let token;
+  // console.log(req.headers.authorization);
+  if(req.headers.authorization){
+    try {  
+      console.log('token found');
 
-  if(req.headers.authorization && req.headers.authorization.startsWith('Bearer')){
-    try {
         //get token from header
-      token = req.headers.authorization.split(' ')[1];
-      //verify token
+      token = req.headers.authorization;
+      //verify token  
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
       
       //get user from db
       req.user = await User.findById(decoded.id).select('-password');
     //   console.log(decoded);
+    console.log(req.user);
       next();
     } catch (error) {
       console.log(error);
@@ -29,4 +32,4 @@ const protect = asyncHandler(async (req, res, next) => {
 });
 
 
-module.exports ={ protect};
+module.exports= {protect};
