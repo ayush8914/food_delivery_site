@@ -12,7 +12,8 @@ const { getAllRestaurants,
      removeItemFromRestaurant,
      updateItemFromRestaurant,
      deleteAllItemsFromRestaurant,
-     getAllRestaurantsByOwner
+     getAllRestaurantsByOwner,
+     getItem
     } = require('../controllers/restaurant');
 
 //get all restaurants by owner
@@ -44,6 +45,9 @@ router.route('/:id/items/:itemid').delete( removeItemFromRestaurant );
 
 //update item from restaurant
 router.route('/:id/items/:itemid').patch( updateItemFromRestaurant );
+
+//get item from restaurant
+router.route('/:id/items/:itemid').get( getItem );
 
 //get all items from restaurant
 router.route('/:id/items').get( getAllItemsFromRestaurant );

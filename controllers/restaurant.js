@@ -69,12 +69,12 @@ const removeItemFromRestaurant = async (req, res) => {
                 return res.status(404).json({msg: `No restaurant with id ${restaurantID}`});
         }
         const itemID  = req.params.itemid;
-
-        const item1 = await item.findById(itemID);
+        
+        const item1 = await item.findByIdAndDelete(itemID);
         if(!item1){
                 return res.status(404).json({msg: `No item with id ${itemID}`});
         }
-        const itemDeleted = await deleteItem(req, res);
+        res.status(200).json({msg: `item with id ${itemID} deleted`});
 }
 
 //update item from restuarant using item controller update item
@@ -114,6 +114,23 @@ const deleteAllItemsFromRestaurant = async (req, res) => {
         const itemsDeleted = await deleteAllItems(req, res);
 }
 
+//get item by id from restuarant using item controller get item by id
+const getItem = async (req, res) => {
+      const restuarantID = req.params.id;
+        const itemID = req.params.itemid;
+        const restaurant = await restuarant.findById(restuarantID);
+        if(!restaurant){
+                return res.status(404).json({msg: `No restaurant with id ${restuarantID}`});
+        }
+
+        const items = await item.findById(itemID);
+        if(!items){
+                return res.status(404).json({msg: `No item with id ${itemID}`});
+        }
+        res.status(200).json({items});
+}
+      
+
 module.exports = { getAllRestaurants, 
         getRestaurantById, 
         addRestaurant, 
@@ -125,5 +142,6 @@ module.exports = { getAllRestaurants,
         removeItemFromRestaurant,
         updateItemFromRestaurant,
         deleteAllItemsFromRestaurant,
-        getAllRestaurantsByOwner
+        getAllRestaurantsByOwner,
+        getItem
 };

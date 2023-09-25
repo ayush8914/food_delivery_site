@@ -26,10 +26,10 @@ const getAllItems = async (req, res) => {
         }
          
         // pagination
-        let page = parseInt(req.query.page) || 1;
-        let limit = parseInt(req.query.limit) || 3;
-        let startIndex = (page - 1) * limit;
-        apiData = apiData.skip(startIndex).limit(limit);
+        // let page = parseInt(req.query.page) || 1;
+        // let limit = parseInt(req.query.limit) || 3;
+        // let startIndex = (page - 1) * limit;
+        // apiData = apiData.skip(startIndex).limit(limit);
         
         const items =await apiData;
         res.status(200).json({items, nbHits: items.length });
@@ -76,6 +76,8 @@ const getAllItemsTesting = async (req, res) => {
         const items =await item.find(req.query).sort('rating price');
         res.status(200).json({items});   
 };
+
+
  
 module.exports = { getAllItems, getAllItemsTesting,addItem, addAllItems, updateItem,deleteItem , deleteAllItems}; 
 

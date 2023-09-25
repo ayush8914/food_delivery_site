@@ -8,9 +8,10 @@ const orderSchema = new mongoose.Schema({
       Item: { type: mongoose.Schema.Types.ObjectId, ref: 'Item', required: true },
       quantity: { type: Number, required: true },
     },
-  ],
+ ],
+
   totalAmount: { type: Number, required: true },
-  status: { type: String, enum: ['pending', 'processing', 'completed'], default: 'pending' },
+  status: { type: String, enum: ['pending', 'processing','completed'], default: 'pending' },
   orderDate: { type: Date, default: Date.now },
 });
 
