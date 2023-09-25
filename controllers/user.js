@@ -123,5 +123,7 @@ const generateToken = (id) => {
     }
     );}
 
+const temp={}
+
 module.exports = { registerUser, loginUser, getUserProfile,getAllUsers,updateUser };
 
