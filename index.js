@@ -11,6 +11,8 @@ const {protect} = require('./middleware/authmiddleware');
 // const asyncHandler = require('express-async-handler');
 // const User = require('./models/user');
 
+const cart_routes = require('./routes/cart'); 
+
 
 const app = experss();
 const PORT = process.env.PORT || 5000;
@@ -23,6 +25,7 @@ app.use(BodyParser.json());
 
 app.use('/api/items',items_routes);
 app.use('/api/users',user_routes);
+app.use('/api/cart',cart_routes);
 app.use('/api/restaurants',restaurants_routes);
 
 app.get('/', (req, res) => { res.send('Hello World') ; res.end();});

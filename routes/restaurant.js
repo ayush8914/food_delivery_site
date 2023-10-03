@@ -50,7 +50,7 @@ router.route('/:id/items/:itemid').patch( updateItemFromRestaurant );
 router.route('/:id/items/:itemid').get( getItem );
 
 //get all items from restaurant
-router.route('/:id/items').get( getAllItemsFromRestaurant );
+router.route('/:id/items').get(getAllItemsFromRestaurant);
 
 //delete all items from restaurant
 router.route('/:id/items').delete( deleteAllItemsFromRestaurant );
