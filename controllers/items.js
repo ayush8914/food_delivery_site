@@ -36,6 +36,16 @@ const getAllItems = async (req, res) => {
 
 };
 
+//get item by id
+const getItemById = async (req, res) => {
+        const { itemid: itemID } = req.params;
+        const i = await item.findById(itemID);
+        if(!i){
+                return res.status(404).json({msg: `No item with id ${itemID}`});
+        }
+        res.status(200).json({i});
+} 
+
 
 const deleteItem = async (req, res) => {
         const { itemid: itemID } = req.params;
@@ -79,6 +89,6 @@ const getAllItemsTesting = async (req, res) => {
 
 
  
-module.exports = { getAllItems, getAllItemsTesting,addItem, addAllItems, updateItem,deleteItem , deleteAllItems}; 
+module.exports = { getAllItems, getAllItemsTesting,addItem, addAllItems, updateItem,deleteItem , deleteAllItems,getItemById}; 
 
         

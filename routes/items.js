@@ -3,7 +3,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const { getAllItems, getAllItemsTesting, addItem, addAllItems, updateItem, deleteItem,deleteAllItems} = require('../controllers/items');
+const { getAllItems, getAllItemsTesting, addItem, addAllItems, updateItem, deleteItem,deleteAllItems ,getItemById} = require('../controllers/items');
 
 //get items
 // router.route('/').get( getAllItems  );
@@ -25,5 +25,9 @@ const { getAllItems, getAllItemsTesting, addItem, addAllItems, updateItem, delet
 
 //testing
 // router.route('/testing').get( getAllItemsTesting);
+
+
+//get item by id
+router.route('/:id').get( getItemById );
 
 module.exports = router;    
